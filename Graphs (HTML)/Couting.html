@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <title>Couting Sort</title>
+  </head>
+  <body>
+    <canvas id="line-chart" width="100000" height="50000"></canvas>
+    <script>
+      new Chart(document.getElementById("line-chart"), {
+        type: "line",
+        data: {
+          labels: [10000, 50000, 100000],
+          datasets: [
+            {
+              data: [0.0008710000, 0.0009190000, 0.0019290000],
+              label: "Couting Sort RANDOM",
+              borderColor: "blue",
+              fill: false,
+              tension: 0.5,
+            },
+            {
+              data: [0.0004450000, 0.0004790000, 0.0009940000],
+              label: "Couting Sort CRESCENTE",
+              borderColor: "red",
+              fill: false,
+              tension: 0.5,
+            },
+            {
+              data: [0.0004820000, 0.0004810000, 0.0010570000],
+              label: "Couting Sort DECRESCENTE",
+              borderColor: "green",
+              fill: false,
+              tension: 0.5,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          title: {
+            display: true,
+            text: "| Tempos de Ordenação | COUNTING SORT |",
+          },
+          layout: {
+            padding: {
+              left: 210,
+              right: 210,
+              top: 30,
+              bottom: 200,
+            },
+          },
+          interaction: {
+            mode: "index",
+            intersect: false,
+          },
+          scales: {
+            xAxes: [
+              {
+                scaleLabel: {
+                  display: true,
+                  labelString: "Número de Itens",
+                },
+              },
+            ],
+            yAxes: [
+              {
+                scaleLabel: {
+                  display: true,
+                  labelString: "Tempo de Execução",
+                },
+              },
+            ],
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
